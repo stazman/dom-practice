@@ -9,7 +9,41 @@
   <h1>This is the only element that wasn't added dynamically</h1>
 
 <script>
-  
+
+  let listDiv = document.createElement("div");
+
+  listDiv.style.color = "blue";
+
+  listDiv.textContent = "This sentence and its div were added dynamically.";
+
+  listDiv.setAttribute("class", "listDiv");
+
+  document.body.append(listDiv);
+
+  let makeList = document.createElement("ul");
+
+  document.querySelector(".listDiv").append(makeList);
+
+  let makeListItem1 = document.createElement("li");
+
+  makeListItem1.textContent = "This list item was added dynamically. Click it to remove it dynamically."
+
+  let makeListItem2 = document.createElement("li");
+
+  makeListItem1.setAttribute("id", "item1");
+
+  makeListItem2.setAttribute("id", "item2")
+
+  makeListItem2.textContent = "This list item was also added dynamically. Click it to remove it dynamically.";
+
+  makeList.append(makeListItem1);
+
+  makeList.append(makeListItem2);
+
+  document.querySelector("#item1").addEventListener("click", function(){ makeListItem1.remove()})
+
+  document.querySelector("#item2").addEventListener("click", function(){ makeListItem2.remove()})
+
 </script>
 </body>
 </html>
