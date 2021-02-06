@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom Practice 2</title>
+  <style>
+
+    ::marker {
+      color: blue;
+      font-size: 1.2em;
+    }
+
+    li {
+      color: blue;
+    }
+
+  </style>
+</head>
+<body>
+
+<script>
+
+  let list = document.createElement('ul')
+
+  let item1 = document.createElement('li')
+  let item2 = document.createElement('li')
+  let item3 = document.createElement('li')
+
+  item1.append('First list item')
+  item2.append('Second list item')
+  item3.append('Third list item')
+
+  document.body.append(list)
+
+
+  // list.outerHTML += item1.outerHTML + item2.outerHTML + item3.outerHTML
+
+  list.append(item1, item2, item3)
+
+</script>
+
+</body>
+</html>
